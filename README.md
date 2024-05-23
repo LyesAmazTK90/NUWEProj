@@ -1,12 +1,12 @@
 # 🦋 Butterfly Detection  📸
 
-### Category   ➡️   Data Science
+Category   ➡️   Data Science
 
-### Subcategory   ➡️   Computer Vision
+Subcategory   ➡️   Computer Vision
 
-### Difficulty   ➡️   (Basic)
+Difficulty   ➡️   Easy
 
-## 🌲 Context
+## 🌐 Background
 
 In the heart of a lush forest, biologists are on a mission to unravel the mysteries of butterfly species. Cameras set up throughout the forest capture thousands of images, creating a need for a technological solution to identify butterflies within these photos efficiently.
 
@@ -14,19 +14,23 @@ As a data scientist, your expertise is crucial for developing a solution that au
 
 ![Image](https://cdn.nuwe.io/infojobs-data/__images/DL2_ImageClassification.png)
 
-## 🎯 Objectives
-
-Your task is to create a neural network model that can process images from forest cameras and accurately detect the presence of butterflies. This model must differentiate butterflies from other insects, adapting to various lighting conditions and angles.
-
-## 📁 Dataset
+### 🗂️ Dataset 
 
 You will be provided with a dataset comprising images taken from the forest, with various scenes including different animals, plants, and insects. Some images will contain butterflies, while others will not.
 
-### Download Links:
+#### Download Links:
 - For the training dataset: [Download train.zip](https://cdn.nuwe.io/joboffers-data/dl2/train.zip)
 - For the testing dataset: [Download test.zip](https://cdn.nuwe.io/joboffers-data/dl2/test.zip)
 
-## 🗄️ Repo Structure:
+### 📊 Data Processing
+
+Data preprocessing should be applied to normalize and prepare the images for the model, considering the various lighting conditions and angles present in the dataset.
+
+### 🤖 Model
+
+Select and train a neural network capable of distinguishing butterflies from other elements in the images. You may experiment with different architectures, like convolutional neural networks (CNNs), to find the most effective solution.
+
+## 📂 Repository Structure
 
 The repository structure is provided and must be adhered to strictly:
 
@@ -45,17 +49,10 @@ nuwe-data-dl2/
 
 The `predictions` folder will contain the `predictions.json` file with your model's predictions on whether an image contains a butterfly or not.
 
-## 🎯 Tasks:
+## 🎯 Tasks
 
-Develop a neural network to process and detect butterflies in images from forest cameras, contributing to the biologists' research efforts.
+Your task is to create a neural network model able to process images from forest cameras and accurately detect the presence of butterflies. This model must differentiate butterflies from other insects, adapting to various lighting conditions and angles.
 
-## 📊 Data Processing:
-
-Data preprocessing should be applied to normalize and prepare the images for the model, considering the various lighting conditions and angles present in the dataset.
-
-## 🤖 Model:
-
-Select and train a neural network capable of distinguishing butterflies from other elements in the images. You may experiment with different architectures, like convolutional neural networks (CNNs), to find the most effective solution.
 
 ## 📤 Submission
 
@@ -64,13 +61,14 @@ Submit a `predictions.json` file containing the model's predictions for each ima
 ```json
 {
     "target": {
-        "image1.jpg": 0,
-        "image2.jpg": 1,
-        "image3.jpg": 1,
+        "imagen_1.jpg": 0,
+        "imagen_2.jpg": 1,
+        "imagen_3.jpg": 1,
         ...
     }
 }
 ```
+
 ## 📊 Evaluation
 
 Performance will be measured using accuracy and F1 Score to ensure precision and recall, offering a balanced view of the model's ability to detect butterflies.

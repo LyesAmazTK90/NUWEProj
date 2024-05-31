@@ -2,9 +2,13 @@
 
 Category   ➡️   Data Science
 
-Subcategory   ➡️   Computer Vision
+Subcategory   ➡️   Computer Vision Engineer
 
 Difficulty   ➡️   Easy
+
+Expected solution time ➡️ 4 hours. **It is essential to complete your solution within this timeframe,** as it is a critical performance indicator used by the hiring company to evaluate your work. The timer will begin when you click the start button and will stop upon your submission.
+
+---
 
 ## 🌐 Background
 
@@ -51,7 +55,7 @@ The `predictions` folder will contain the `predictions.json` file with your mode
 
 ## 🎯 Tasks
 
-Your task is to create a neural network model able to process images from forest cameras and accurately detect the presence of butterflies. This model must differentiate butterflies from other insects, adapting to various lighting conditions and angles.
+- Task 1: Your task is to create a neural network model able to process images from forest cameras and accurately detect the presence of butterflies. This model must differentiate butterflies from other insects, adapting to various lighting conditions and angles.
 
 
 ## 📤 Submission
@@ -72,6 +76,7 @@ Submit a `predictions.json` file containing the model's predictions for each ima
 ## 📊 Evaluation
 
 Performance will be measured using accuracy and F1 Score to ensure precision and recall, offering a balanced view of the model's ability to detect butterflies.
+- Task 1: 900 points
 
 **⚠️ Please note:**  
 All submissions will undergo a manual code review process to ensure that the work has been conducted honestly and adheres to the highest standards of academic integrity. Any form of dishonesty or misconduct will be addressed seriously, and may lead to disqualification from the challenge.

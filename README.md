@@ -95,3 +95,4 @@ A3: CNNs are typically recommended for image detection tasks, but you are encour
 
 **Q4: How will the model's performance be evaluated?**  
 A4: The model's performance will be evaluated based on its accuracy and F1 Score, which consider both precision and recall.
+# NUWEProj

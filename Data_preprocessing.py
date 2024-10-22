@@ -1,43 +1,47 @@
 import os
+import numpy as np
 import pandas as pd
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
-def load_data(train_dir, test_dir):
-    # Data Augmentation
-    train_datagen = ImageDataGenerator(
-        rescale=1.0/255,
-        rotation_range=20,
-        width_shift_range=0.2,
-        height_shift_range=0.2,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True,
-        validation_split=0.2  # 80% training, 20% validation
-    )
+def load_images_and_labels(image_dir, labels_path):
+    images = []
+    labels = []
+    labels_df = pd.read_csv(labels_path)
 
-    train_generator = train_datagen.flow_from_directory(
-        train_dir,
-        target_size=(224, 224),
-        batch_size=32,
-        class_mode='binary',
-        subset='training'
-    )
+    
+    print("Labels DataFrame:")
+    print(labels_df.head())
 
-    validation_generator = train_datagen.flow_from_directory(
-        train_dir,
-        target_size=(224, 224),
-        batch_size=32,
-        class_mode='binary',
-        subset='validation'
-    )
+    for _, row in labels_df.iterrows():
+        
+        image_file = row['path'].strip()
+        if image_file.startswith('train/'):
+            image_file = image_file[len('train/'):]  
+        
+        
+        image_path = os.path.normpath(os.path.join(image_dir, image_file))
 
-    test_datagen = ImageDataGenerator(rescale=1.0/255)
-    test_generator = test_datagen.flow_from_directory(
-        test_dir,
-        target_size=(224, 224),
-        batch_size=32,
-        class_mode=None,
-        shuffle=False
-    )
+        
+        print(f"Loading image from: {image_path}")
 
-    return train_generator, validation_generator, test_generator
+        if os.path.isfile(image_path):  
+            try:
+                img = load_img(image_path, target_size=(224, 224))  
+                img_array = img_to_array(img) / 255.0  
+                images.append(img_array)
+                labels.append(row['label'])  
+            except Exception as e:
+                print(f"Error loading image {image_path}: {e}")
+        else:
+            print(f"Image not found: {image_path}")  
+
+    return np.array(images), np.array(labels)
+
+
+train_dir = 'data/train'  
+labels_path = 'data/labels_path.csv'
+
+
+X_train, y_train = load_images_and_labels(train_dir, labels_path)
+
+print(f"Loaded {len(X_train)} images and {len(y_train)} labels.")

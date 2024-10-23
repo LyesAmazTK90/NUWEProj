@@ -1,8 +1,8 @@
-tensorflow==2.17.0
-numpy
-pd
-numpy
-pillow
-opencv-python
-json
 os
+numpy
+pandas
+tensorflow
+sklearn.model_selection import train_test_split
+sklearn.metrics
+tensorflow.keras.preprocessing.image
+json  

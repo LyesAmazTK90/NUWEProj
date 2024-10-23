@@ -73,7 +73,9 @@ def main():
     
     
     predictions_path = 'predictions/predictions.json'
-    os.makedirs(os.path.dirname(predictions_path), exist_ok=True)  
+    os.makedirs(os.path.dirname(predictions_path), exist_ok=True)  git remote add origin https://github.com/LyesAmazTK90/NUWE.git
+git branch -M main
+git push -u origin main
 
     print("Saving predictions to JSON...")
     with open(predictions_path, 'w') as json_file:

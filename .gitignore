@@ -1,1 +1,6 @@
+# Ignore virtual environment folder
 venv/
+
+# Ignore any large files you don't want to track
+*.dll
+*.pyd
